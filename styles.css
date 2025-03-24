@@ -762,11 +762,11 @@ footer {
         max-width: 400px;
         margin: 2rem auto 0;
         padding: 1.25rem 2rem;
-        font-size: 1.25rem;
+        font-size: 1rem;
     }
 
     .clap-icon {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 }
 
@@ -871,11 +871,19 @@ footer {
 
     .faq-item {
         margin-bottom: 1rem;
+        transform: none !important;
+        box-shadow: none !important;
+    }
+
+    .faq-item:hover {
+        transform: none !important;
+        box-shadow: none !important;
     }
 
     .faq-question {
         padding: 1.5rem;
         font-size: 1.125rem;
+        cursor: default;
     }
 
     .faq-answer {
@@ -1112,11 +1120,11 @@ footer {
         max-width: 400px;
         margin: 2rem auto 0;
         padding: 1.25rem 2rem;
-        font-size: 1.25rem;
+        font-size: 1rem;
     }
 
     .clap-icon {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 }
 
@@ -1180,6 +1188,17 @@ footer {
 
 /* Disable hover effects on mobile */
 @media (hover: none) {
+    .faq-item:hover,
+    .faq-item:active {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+
+    .faq-question:hover,
+    .faq-question:active {
+        background: none !important;
+    }
+
     .cta-button:hover,
     .cta-button:active,
     .social-links a:hover,
@@ -1203,5 +1222,27 @@ footer {
     .clap-button:hover .clap-icon {
         transform: none !important;
         color: var(--text-color) !important;
+    }
+
+    /* Reset button states after active state */
+    .cta-button:active,
+    .clap-button:active,
+    .ml-form-embedSubmit button:active {
+        background: var(--primary-color) !important;
+        border-color: var(--border-color) !important;
+    }
+
+    .cta-button.primary:active {
+        background: var(--gradient-1) !important;
+    }
+
+    .cta-button.secondary:active {
+        background: transparent !important;
+        border-color: var(--primary-color) !important;
+    }
+
+    .clap-button:active {
+        background: var(--card-background) !important;
+        border-color: var(--border-color) !important;
     }
 } 
