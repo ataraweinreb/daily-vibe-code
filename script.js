@@ -241,4 +241,14 @@ document.addEventListener('DOMContentLoaded', function() {
             icon.style.transform = 'scale(1) rotate(0deg)';
         });
     });
+});
+
+// Handle hero image loading
+document.addEventListener('DOMContentLoaded', function() {
+    const heroImg = document.querySelector('.hero-img');
+    if (heroImg) {
+        heroImg.addEventListener('load', function() {
+            this.classList.add('loaded');
+        });
+    }
 }); 
