@@ -130,6 +130,16 @@ body {
     line-height: 1.6;
 }
 
+.hero-subtitle a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.hero-subtitle a:hover {
+    color: var(--accent-2);
+}
+
 .hero-image {
     position: relative;
     overflow: hidden;
@@ -428,13 +438,8 @@ body {
     transition: all 0.3s ease;
 }
 
-.faq-item.active .faq-question {
-    background: none;
-}
-
 .faq-icon {
-    font-size: 1.5rem;
-    color: var(--primary-color);
+    display: none;
 }
 
 .faq-answer {
@@ -460,12 +465,6 @@ body {
     color: var(--accent-2);
 }
 
-/* Remove the quote styling */
-.faq-answer .quote {
-    display: none;
-}
-
-/* Add animation delays for FAQ items */
 .faq-item:nth-child(1) { transition-delay: 0.1s; }
 .faq-item:nth-child(2) { transition-delay: 0.2s; }
 .faq-item:nth-child(3) { transition-delay: 0.3s; }
@@ -879,8 +878,11 @@ footer {
         font-size: 1.125rem;
     }
 
-    .faq-answer p {
+    .faq-answer {
         padding: 0 1.5rem 1.5rem;
+    }
+
+    .faq-answer p {
         font-size: 0.9375rem;
     }
 

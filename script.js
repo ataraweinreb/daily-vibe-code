@@ -19,46 +19,63 @@ ml('account', '1406682');
 
 // Form submission handling
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize MailerLite
-    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);};l=d.createElement(e),l.async=1,l.src=u,n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    // Initialize MailerLite script
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);};l=d.createElement(e);l.async=1;l.src=u;n=d.getElementsByTagName(e)[0];n.parentNode.insertBefore(l,n);})(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '123456789');
 
-    // Handle form submission
-    const form = document.querySelector('.ml-block-form');
+    // Handle MailerLite form submission
+    const form = document.querySelector('.ml-form-embedContainer form');
     if (form) {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const emailInput = form.querySelector('input[name="fields[email]"]');
-            const submitButton = form.querySelector('button[type="submit"]');
-            const loadingButton = form.querySelector('button.loading');
+            const emailInput = form.querySelector('input[type="email"]');
+            const submitButton = form.querySelector('.ml-form-embedSubmit button');
+            const originalButtonText = submitButton.innerHTML;
             
-            if (!emailInput || !submitButton || !loadingButton) return;
-            
-            const email = emailInput.value;
-            
+            if (!emailInput.value) {
+                return;
+            }
+
             // Show loading state
-            submitButton.style.display = 'none';
-            loadingButton.style.display = 'block';
-            
+            submitButton.innerHTML = '<div class="ml-form-embedSubmitLoad"></div>';
+            submitButton.classList.add('loading');
+
             // Submit to MailerLite
-            ml('subscribe', '1406682', email, {
-                callback: function() {
+            ml('subscribe', {
+                email: emailInput.value,
+                success: function() {
                     // Show success message
-                    const successBody = form.closest('.ml-form-embedBody').nextElementSibling;
-                    if (successBody) {
-                        successBody.style.display = 'block';
-                        form.closest('.ml-form-embedBody').style.display = 'none';
-                    }
+                    const successMessage = document.createElement('div');
+                    successMessage.className = 'ml-form-successBody';
+                    successMessage.innerHTML = `
+                        <div class="ml-form-successContent">
+                            <h4>Thank you!</h4>
+                            <p>You've been successfully subscribed.</p>
+                        </div>
+                    `;
+                    form.appendChild(successMessage);
                     
                     // Reset form
                     emailInput.value = '';
+                    submitButton.innerHTML = originalButtonText;
+                    submitButton.classList.remove('loading');
                 },
-                onError: function() {
-                    // Show error state
-                    submitButton.style.display = 'block';
-                    loadingButton.style.display = 'none';
-                    alert('There was an error subscribing. Please try again.');
+                error: function() {
+                    // Show error message
+                    const errorMessage = document.createElement('div');
+                    errorMessage.className = 'ml-form-errorBody';
+                    errorMessage.innerHTML = `
+                        <div class="ml-form-errorContent">
+                            <h4>Oops!</h4>
+                            <p>Something went wrong. Please try again.</p>
+                        </div>
+                    `;
+                    form.appendChild(errorMessage);
+                    
+                    // Reset button
+                    submitButton.innerHTML = originalButtonText;
+                    submitButton.classList.remove('loading');
                 }
             });
         });
@@ -67,33 +84,27 @@ document.addEventListener('DOMContentLoaded', function() {
     // Clap button functionality
     const clapButton = document.querySelector('.clap-button');
     if (clapButton) {
-        const clapSound = new Audio('https://assets.mixkit.co/active_storage/sfx/2017/2017-preview.mp3');
-        
         clapButton.addEventListener('click', function() {
             // Play clap sound
-            clapSound.currentTime = 0;
+            const clapSound = new Audio('https://assets.mixkit.co/active_storage/sfx/2017/2017-preview.mp3');
             clapSound.play();
-            
-            // Show clap animation
+
+            // Add clap animation
             this.classList.add('clap-active');
-            
-            // Create round of applause effect
-            for (let i = 0; i < 5; i++) {
-                setTimeout(() => {
-                    createConfetti(1000, 30); // Shorter duration and fewer particles for each clap
-                }, i * 200); // Stagger each clap
-            }
-            
-            // Reset animation after 1 second
-            setTimeout(() => {
-                this.classList.remove('clap-active');
-            }, 1000);
+            setTimeout(() => this.classList.remove('clap-active'), 500);
+
+            // Trigger confetti
+            triggerConfetti();
         });
     }
+
+    // Trigger confetti on page load
+    triggerConfetti();
 });
 
 // Confetti effect function
-function createConfetti(duration = 3000, particleCount = 50) {
+function triggerConfetti() {
+    const duration = 3000;
     const animationEnd = Date.now() + duration;
     const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
 
@@ -108,53 +119,20 @@ function createConfetti(duration = 3000, particleCount = 50) {
             return clearInterval(interval);
         }
 
-        const currentParticleCount = particleCount * (timeLeft / duration);
-        
-        // Confetti from multiple positions
+        const particleCount = 50 * (timeLeft / duration);
+
         confetti({
             ...defaults,
-            particleCount: currentParticleCount,
-            origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
-            colors: ['#FF6B6B', '#4ECDC4', '#A8E6CF', '#FFD93D', '#FF8B94']
+            particleCount,
+            origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 }
         });
         confetti({
             ...defaults,
-            particleCount: currentParticleCount,
-            origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
-            colors: ['#FF6B6B', '#4ECDC4', '#A8E6CF', '#FFD93D', '#FF8B94']
+            particleCount,
+            origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 }
         });
     }, 250);
 }
-
-// Trigger confetti on page load
-window.addEventListener('load', function() {
-    createConfetti(5000, 100); // Longer duration and more particles for page load
-});
-
-// FAQ accordion functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        const answer = item.querySelector('.faq-answer');
-        
-        question.addEventListener('click', () => {
-            const isActive = item.classList.contains('active');
-            
-            // Close all other items
-            faqItems.forEach(otherItem => {
-                if (otherItem !== item) {
-                    otherItem.classList.remove('active');
-                    otherItem.querySelector('.faq-answer').style.maxHeight = null;
-                }
-            });
-            
-            // Toggle current item
-            item.classList.toggle('active');
-            answer.style.maxHeight = isActive ? null : answer.scrollHeight + 'px';
-        });
-    });
-});
 
 // Feature card animations on scroll
 const observerOptions = {
