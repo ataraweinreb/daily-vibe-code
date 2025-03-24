@@ -465,6 +465,10 @@ body {
     color: var(--accent-2);
 }
 
+.faq-answer a:active {
+    color: var(--primary-color);
+}
+
 .faq-item:nth-child(1) { transition-delay: 0.1s; }
 .faq-item:nth-child(2) { transition-delay: 0.2s; }
 .faq-item:nth-child(3) { transition-delay: 0.3s; }
@@ -669,15 +673,15 @@ footer {
 }
 
 .cta-button.primary {
-    background: var(--gradient-1);
+    background: var(--primary-color);
     color: white;
-    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
     transition: all 0.3s ease;
 }
 
 .cta-button.primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
     background: var(--primary-hover);
 }
 
@@ -1162,6 +1166,10 @@ footer {
     color: var(--accent-2);
 }
 
+.social-tags .social-links a:active {
+    color: var(--primary-color);
+}
+
 .email-link {
     color: var(--primary-color);
     text-decoration: none;
@@ -1174,6 +1182,10 @@ footer {
 
 .email-link:hover {
     color: var(--accent-2);
+}
+
+.email-link:active {
+    color: var(--primary-color);
 }
 
 @media (max-width: 768px) {
