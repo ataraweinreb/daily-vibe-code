@@ -1199,22 +1199,6 @@ footer {
         background: none !important;
     }
 
-    .cta-button:hover,
-    .cta-button:active,
-    .social-links a:hover,
-    .social-links a:active,
-    .email-link:hover,
-    .email-link:active,
-    .clap-button:hover,
-    .clap-button:active,
-    .ml-form-embedSubmit button:hover,
-    .ml-form-embedSubmit button:active {
-        transform: none !important;
-        box-shadow: none !important;
-        background: var(--primary-color) !important;
-        border-color: var(--border-color) !important;
-    }
-
     .clap-button:hover::before {
         opacity: 0 !important;
     }
@@ -1222,27 +1206,5 @@ footer {
     .clap-button:hover .clap-icon {
         transform: none !important;
         color: var(--text-color) !important;
-    }
-
-    /* Reset button states after active state */
-    .cta-button:active,
-    .clap-button:active,
-    .ml-form-embedSubmit button:active {
-        background: var(--primary-color) !important;
-        border-color: var(--border-color) !important;
-    }
-
-    .cta-button.primary:active {
-        background: var(--gradient-1) !important;
-    }
-
-    .cta-button.secondary:active {
-        background: transparent !important;
-        border-color: var(--primary-color) !important;
-    }
-
-    .clap-button:active {
-        background: var(--card-background) !important;
-        border-color: var(--border-color) !important;
     }
 } 
