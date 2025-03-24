@@ -422,17 +422,14 @@ body {
     color: var(--text-color);
     font-size: 1.25rem;
     font-weight: 500;
-    cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-left: 3px solid transparent;
     transition: all 0.3s ease;
 }
 
 .faq-item.active .faq-question {
-    border-left-color: var(--accent-2);
-    background: rgba(139, 92, 246, 0.05);
+    background: none;
 }
 
 .faq-icon {
@@ -443,10 +440,10 @@ body {
 .faq-answer {
     max-height: none;
     background: var(--card-background);
+    padding: 0 2rem 2rem;
 }
 
 .faq-answer p {
-    padding: 0 2rem 2rem;
     color: var(--secondary-color);
     line-height: 1.6;
     text-align: left;
@@ -986,7 +983,7 @@ footer {
     border-radius: 8px !important;
     color: var(--text-color) !important;
     font-family: var(--font-family) !important;
-    font-size: 1.25rem !important;
+    font-size: 1rem !important;
     height: 64px !important;
     padding: 0 1.5rem !important;
     transition: all 0.3s ease !important;
@@ -1002,7 +999,7 @@ footer {
 
 .ml-form-fieldRow input::placeholder {
     color: rgba(255, 255, 255, 0.6) !important;
-    font-size: 1.25rem !important;
+    font-size: 1rem !important;
 }
 
 .ml-form-embedSubmit {
@@ -1016,7 +1013,7 @@ footer {
     color: white !important;
     cursor: pointer !important;
     font-family: var(--font-family) !important;
-    font-size: 1.25rem !important;
+    font-size: 1rem !important;
     font-weight: 600 !important;
     height: 64px !important;
     padding: 0 2.5rem !important;
@@ -1089,13 +1086,13 @@ footer {
     }
     
     .ml-form-fieldRow input {
-        font-size: 1.5rem !important;
-        height: 72px !important;
-        padding: 0 2rem !important;
+        font-size: 1rem !important;
+        height: 64px !important;
+        padding: 0 1.5rem !important;
     }
 
     .ml-form-fieldRow input::placeholder {
-        font-size: 1.5rem !important;
+        font-size: 1rem !important;
     }
 
     .ml-form-embedSubmit {
@@ -1103,9 +1100,9 @@ footer {
     }
 
     .ml-form-embedSubmit button {
-        font-size: 1.5rem !important;
-        height: 72px !important;
-        padding: 0 3rem !important;
+        font-size: 1rem !important;
+        height: 64px !important;
+        padding: 0 2.5rem !important;
     }
 
     .clap-button {
@@ -1146,6 +1143,9 @@ footer {
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .social-tags .social-links a:hover {
@@ -1157,6 +1157,9 @@ footer {
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .email-link:hover {
