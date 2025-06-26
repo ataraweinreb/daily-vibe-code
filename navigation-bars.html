@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Navigation Bars UI Prompts</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: #fefefe;
+      color: #222;
+    }
+    header {
+      background: #111;
+      color: white;
+      padding: 1.5rem 2rem;
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+    .prompt-box {
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    .prompt-title {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    pre {
+      white-space: pre-wrap;
+      background: #f4f4f4;
+      padding: 0.75rem;
+      border-radius: 4px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.95rem;
+    }
+    .copy-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: #222;
+      color: white;
+      border: none;
+      padding: 0.4rem 0.7rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.8rem;
+    }
+    .copy-btn:hover {
+      background: #444;
+    }
+    a {
+      color: #007acc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Navigation Bars Prompts</h1>
+    <p><a href="index.html">&larr; Back to homepage</a></p>
+  </header>
+  <div class="container">
+    
+    <div class="prompt-box">
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+      <div class="prompt-title">Responsive Navigation Bar Prompt</div>
+      <pre><strong>Prompt:</strong>
+Create a responsive navigation bar using HTML, CSS, and JS. Use ___ color scheme, ___ logo placement, and ___ menu style. The navigation bar should collapse into a hamburger menu on mobile.
+</pre>
+      <div style="margin-top: 0.5rem; font-size: 0.9rem; color: #555;"><strong>Example:</strong>
+Create a responsive navigation bar using HTML, CSS, and JS. Use a navy and white color scheme, left-aligned logo, and horizontal menu style. The navigation bar should collapse into a hamburger menu on mobile.</div>
+    </div>
+        
+    <div class="prompt-box">
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+      <div class="prompt-title">Sticky Navigation Bar Prompt</div>
+      <pre><strong>Prompt:</strong>
+Create a sticky navigation bar using HTML, CSS, and JS. Use ___ background style, ___ shadow effect, and ___ transition for stickiness. The bar should remain visible at the top while scrolling.
+</pre>
+      <div style="margin-top: 0.5rem; font-size: 0.9rem; color: #555;"><strong>Example:</strong>
+Create a sticky navigation bar using HTML, CSS, and JS. Use a transparent background style, subtle shadow effect, and smooth fade-in transition for stickiness. The bar should remain visible at the top while scrolling.</div>
+    </div>
+        
+    <div class="prompt-box">
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+      <div class="prompt-title">Navigation Bar with Dropdowns Prompt</div>
+      <pre><strong>Prompt:</strong>
+Create a navigation bar with dropdown menus using HTML, CSS, and JS. Use ___ dropdown animation, ___ icon style, and ___ menu alignment. The dropdowns should be accessible and keyboard-navigable.
+</pre>
+      <div style="margin-top: 0.5rem; font-size: 0.9rem; color: #555;"><strong>Example:</strong>
+Create a navigation bar with dropdown menus using HTML, CSS, and JS. Use a slide-down dropdown animation, chevron icon style, and right-aligned menu. The dropdowns should be accessible and keyboard-navigable.</div>
+    </div>
+        
+  </div>
+  <footer style="background:#111;color:#fff;text-align:center;padding:1rem;margin-top:4rem;">
+    <p>© 2025 • Made with ❤️ • Built for creators</p>
+  </footer>
+  <script>
+    function copyPrompt(button) {
+      const text = button.nextElementSibling.nextElementSibling.innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = "Copy", 1500);
+      });
+    }
+  </script>
+</body>
+</html>
+    

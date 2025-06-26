@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Buttons UI Prompts</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: #fefefe;
+      color: #222;
+    }
+    header {
+      background: #111;
+      color: white;
+      padding: 1.5rem 2rem;
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+    .prompt-box {
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    .prompt-title {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    pre {
+      white-space: pre-wrap;
+      background: #f4f4f4;
+      padding: 0.75rem;
+      border-radius: 4px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.95rem;
+    }
+    .copy-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: #222;
+      color: white;
+      border: none;
+      padding: 0.4rem 0.7rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.8rem;
+    }
+    .copy-btn:hover {
+      background: #444;
+    }
+    a {
+      color: #007acc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Buttons Prompts</h1>
+    <p><a href="index.html">&larr; Back to homepage</a></p>
+  </header>
+  <div class="container">
+    
+    <div class="prompt-box">
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+      <div class="prompt-title">Gradient Button Prompt</div>
+      <pre><strong>Prompt:</strong>
+Create a responsive gradient button using HTML, CSS, and JS. Use a ___ color gradient, ___ border radius, and ___ font style. The button should have a smooth hover transition and a clear call-to-action label.
+</pre>
+      <div style="margin-top: 0.5rem; font-size: 0.9rem; color: #555;"><strong>Example:</strong>
+Create a responsive gradient button using HTML, CSS, and JS. Use a blue-to-purple linear gradient, 24px border radius, and bold, uppercase font style. The button should have a smooth hover transition and a "Sign Up" label.</div>
+    </div>
+        
+    <div class="prompt-box">
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+      <div class="prompt-title">Radio Button Prompt</div>
+      <pre><strong>Prompt:</strong>
+Create a custom radio button using HTML, CSS, and JS. Use ___ colors for the selected and unselected states, ___ size, and ___ label placement. The radio button should be accessible and include a focus style.
+</pre>
+      <div style="margin-top: 0.5rem; font-size: 0.9rem; color: #555;"><strong>Example:</strong>
+Create a custom radio button using HTML, CSS, and JS. Use teal for the selected state, light gray for the unselected state, 20px size, and label on the right. The radio button should be accessible and include a blue outline focus style.</div>
+    </div>
+        
+    <div class="prompt-box">
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+      <div class="prompt-title">Borderless Button Prompt</div>
+      <pre><strong>Prompt:</strong>
+Create a borderless button using HTML, CSS, and JS. Use ___ background color, ___ font style, and ___ hover effect. The button should be minimalist, with no visible border, and a clear action label.
+</pre>
+      <div style="margin-top: 0.5rem; font-size: 0.9rem; color: #555;"><strong>Example:</strong>
+Create a borderless button using HTML, CSS, and JS. Use a transparent background, italic font style, and underline-on-hover effect. The button should be minimalist, with no visible border, and a "Learn More" label.</div>
+    </div>
+        
+  </div>
+  <footer style="background:#111;color:#fff;text-align:center;padding:1rem;margin-top:4rem;">
+    <p>© 2025 • Made with ❤️ • Built for creators</p>
+  </footer>
+  <script>
+    function copyPrompt(button) {
+      const text = button.nextElementSibling.nextElementSibling.innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = "Copy", 1500);
+      });
+    }
+  </script>
+</body>
+</html>
+    

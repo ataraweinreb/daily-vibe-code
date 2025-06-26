@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shadows UI Prompts</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: #fefefe;
+      color: #222;
+    }
+    header {
+      background: #111;
+      color: white;
+      padding: 1.5rem 2rem;
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+    .prompt-box {
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    .prompt-title {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    pre {
+      white-space: pre-wrap;
+      background: #f4f4f4;
+      padding: 0.75rem;
+      border-radius: 4px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.95rem;
+    }
+    .copy-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: #222;
+      color: white;
+      border: none;
+      padding: 0.4rem 0.7rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.8rem;
+    }
+    .copy-btn:hover {
+      background: #444;
+    }
+    a {
+      color: #007acc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Shadows Prompts</h1>
+    <p><a href="index.html">&larr; Back to homepage</a></p>
+  </header>
+  <div class="container">
+    
+    <div class="prompt-box">
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+      <div class="prompt-title">Card Shadow Prompt</div>
+      <pre><strong>Prompt:</strong>
+Create a card component with a custom shadow using HTML, CSS, and JS. Use ___ shadow color, ___ blur radius, and ___ hover effect. The shadow should enhance card depth and interactivity.
+</pre>
+      <div style="margin-top: 0.5rem; font-size: 0.9rem; color: #555;"><strong>Example:</strong>
+Create a card component with a custom shadow using HTML, CSS, and JS. Use dark gray shadow color, 24px blur radius, and a lift-up hover effect. The shadow should enhance card depth and interactivity.</div>
+    </div>
+        
+    <div class="prompt-box">
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+      <div class="prompt-title">Button Shadow Prompt</div>
+      <pre><strong>Prompt:</strong>
+Create a button with a shadow effect using HTML, CSS, and JS. Use ___ shadow offset, ___ color, and ___ active state. The shadow should provide visual feedback on interaction.
+</pre>
+      <div style="margin-top: 0.5rem; font-size: 0.9rem; color: #555;"><strong>Example:</strong>
+Create a button with a shadow effect using HTML, CSS, and JS. Use 2px offset, blue shadow color, and a pressed-in active state. The shadow should provide visual feedback on interaction.</div>
+    </div>
+        
+    <div class="prompt-box">
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+      <div class="prompt-title">Image Shadow Prompt</div>
+      <pre><strong>Prompt:</strong>
+Create an image with a creative shadow using HTML, CSS, and JS. Use ___ shadow shape, ___ color gradient, and ___ animation. The shadow should complement the image and add visual interest.
+</pre>
+      <div style="margin-top: 0.5rem; font-size: 0.9rem; color: #555;"><strong>Example:</strong>
+Create an image with a creative shadow using HTML, CSS, and JS. Use oval shadow shape, purple-to-pink color gradient, and a slow floating animation. The shadow should complement the image and add visual interest.</div>
+    </div>
+        
+  </div>
+  <footer style="background:#111;color:#fff;text-align:center;padding:1rem;margin-top:4rem;">
+    <p>© 2025 • Made with ❤️ • Built for creators</p>
+  </footer>
+  <script>
+    function copyPrompt(button) {
+      const text = button.nextElementSibling.nextElementSibling.innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = "Copy", 1500);
+      });
+    }
+  </script>
+</body>
+</html>
+    

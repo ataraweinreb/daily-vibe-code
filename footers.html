@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Footers UI Prompts</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: #fefefe;
+      color: #222;
+    }
+    header {
+      background: #111;
+      color: white;
+      padding: 1.5rem 2rem;
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+    .prompt-box {
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    .prompt-title {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    pre {
+      white-space: pre-wrap;
+      background: #f4f4f4;
+      padding: 0.75rem;
+      border-radius: 4px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.95rem;
+    }
+    .copy-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: #222;
+      color: white;
+      border: none;
+      padding: 0.4rem 0.7rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.8rem;
+    }
+    .copy-btn:hover {
+      background: #444;
+    }
+    a {
+      color: #007acc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Footers Prompts</h1>
+    <p><a href="index.html">&larr; Back to homepage</a></p>
+  </header>
+  <div class="container">
+    
+    <div class="prompt-box">
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+      <div class="prompt-title">Simple Footer Prompt</div>
+      <pre><strong>Prompt:</strong>
+Create a simple footer using HTML, CSS, and JS. Use ___ background color, ___ text alignment, and ___ copyright style. The footer should be responsive and minimal.
+</pre>
+      <div style="margin-top: 0.5rem; font-size: 0.9rem; color: #555;"><strong>Example:</strong>
+Create a simple footer using HTML, CSS, and JS. Use dark background color, center text alignment, and small copyright style. The footer should be responsive and minimal.</div>
+    </div>
+        
+    <div class="prompt-box">
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+      <div class="prompt-title">Footer with Social Links Prompt</div>
+      <pre><strong>Prompt:</strong>
+Create a footer with social media links using HTML, CSS, and JS. Use ___ icon style, ___ hover effect, and ___ link arrangement. The footer should be accessible and visually appealing.
+</pre>
+      <div style="margin-top: 0.5rem; font-size: 0.9rem; color: #555;"><strong>Example:</strong>
+Create a footer with social media links using HTML, CSS, and JS. Use outlined icon style, color-fill hover effect, and horizontal link arrangement. The footer should be accessible and visually appealing.</div>
+    </div>
+        
+    <div class="prompt-box">
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+      <div class="prompt-title">Footer with Newsletter Signup Prompt</div>
+      <pre><strong>Prompt:</strong>
+Create a footer with a newsletter signup form using HTML, CSS, and JS. Use ___ input style, ___ button design, and ___ confirmation message. The footer should be responsive and encourage signups.
+</pre>
+      <div style="margin-top: 0.5rem; font-size: 0.9rem; color: #555;"><strong>Example:</strong>
+Create a footer with a newsletter signup form using HTML, CSS, and JS. Use underlined input style, rounded button design, and a toast confirmation message. The footer should be responsive and encourage signups.</div>
+    </div>
+        
+  </div>
+  <footer style="background:#111;color:#fff;text-align:center;padding:1rem;margin-top:4rem;">
+    <p>© 2025 • Made with ❤️ • Built for creators</p>
+  </footer>
+  <script>
+    function copyPrompt(button) {
+      const text = button.nextElementSibling.nextElementSibling.innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = "Copy", 1500);
+      });
+    }
+  </script>
+</body>
+</html>
+    

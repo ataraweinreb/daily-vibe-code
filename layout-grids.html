@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Layout Grids UI Prompts</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: #fefefe;
+      color: #222;
+    }
+    header {
+      background: #111;
+      color: white;
+      padding: 1.5rem 2rem;
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+    .prompt-box {
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    .prompt-title {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    pre {
+      white-space: pre-wrap;
+      background: #f4f4f4;
+      padding: 0.75rem;
+      border-radius: 4px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.95rem;
+    }
+    .copy-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: #222;
+      color: white;
+      border: none;
+      padding: 0.4rem 0.7rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.8rem;
+    }
+    .copy-btn:hover {
+      background: #444;
+    }
+    a {
+      color: #007acc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Layout Grids Prompts</h1>
+    <p><a href="index.html">&larr; Back to homepage</a></p>
+  </header>
+  <div class="container">
+    
+    <div class="prompt-box">
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+      <div class="prompt-title">2-Column Grid Prompt</div>
+      <pre><strong>Prompt:</strong>
+Create a 2-column layout grid using HTML, CSS, and JS. Use ___ gap size, ___ responsive breakpoint, and ___ alignment. The grid should stack vertically on mobile devices.
+</pre>
+      <div style="margin-top: 0.5rem; font-size: 0.9rem; color: #555;"><strong>Example:</strong>
+Create a 2-column layout grid using HTML, CSS, and JS. Use 32px gap size, 768px responsive breakpoint, and center alignment. The grid should stack vertically on mobile devices.</div>
+    </div>
+        
+    <div class="prompt-box">
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+      <div class="prompt-title">3-Column Grid Prompt</div>
+      <pre><strong>Prompt:</strong>
+Create a 3-column layout grid using HTML, CSS, and JS. Use ___ column width, ___ gutter size, and ___ card style. The grid should be flexible and support dynamic content.
+</pre>
+      <div style="margin-top: 0.5rem; font-size: 0.9rem; color: #555;"><strong>Example:</strong>
+Create a 3-column layout grid using HTML, CSS, and JS. Use 1fr column width, 24px gutter size, and card style with rounded corners. The grid should be flexible and support dynamic content.</div>
+    </div>
+        
+    <div class="prompt-box">
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+      <div class="prompt-title">Masonry Grid Prompt</div>
+      <pre><strong>Prompt:</strong>
+Create a masonry grid layout using HTML, CSS, and JS. Use ___ column count, ___ gap, and ___ animation for item loading. The grid should be responsive and visually balanced.
+</pre>
+      <div style="margin-top: 0.5rem; font-size: 0.9rem; color: #555;"><strong>Example:</strong>
+Create a masonry grid layout using HTML, CSS, and JS. Use 4 column count, 20px gap, and fade-in animation for item loading. The grid should be responsive and visually balanced.</div>
+    </div>
+        
+  </div>
+  <footer style="background:#111;color:#fff;text-align:center;padding:1rem;margin-top:4rem;">
+    <p>© 2025 • Made with ❤️ • Built for creators</p>
+  </footer>
+  <script>
+    function copyPrompt(button) {
+      const text = button.nextElementSibling.nextElementSibling.innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = "Copy", 1500);
+      });
+    }
+  </script>
+</body>
+</html>
+    

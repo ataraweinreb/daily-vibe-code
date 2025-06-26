@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Marketing Website Prompts</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: #fefefe;
+      color: #222;
+    }
+    header {
+      background: #111;
+      color: white;
+      padding: 1.5rem 2rem;
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+    .prompt-box {
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    .prompt-title {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    pre {
+      white-space: pre-wrap;
+      background: #f4f4f4;
+      padding: 0.75rem;
+      border-radius: 4px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.95rem;
+    }
+    .copy-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: #222;
+      color: white;
+      border: none;
+      padding: 0.4rem 0.7rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.8rem;
+    }
+    .copy-btn:hover {
+      background: #444;
+    }
+    a {
+      color: #007acc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Marketing Website Prompts</h1>
+    <p>Build a marketing website with AI</p>
+    <p><a href="index.html">&larr; Back to homepage</a></p>
+  </header>
+  <div class="container">
+    <div class="prompt-box">
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+      <div class="prompt-title">Marketing Landing Page</div>
+      <pre><strong>Prompt:</strong>
+Create a responsive landing page for ___ using HTML, CSS, and JS. Use a ___ color palette. The page should feature a hero section with a persuasive headline, a featured campaign or service, client testimonials, and a clear call-to-action button. Incorporate high-quality marketing imagery and modern, accessible design.
+</pre>
+      <div style="margin-top: 0.5rem; font-size: 0.9rem; color: #555;"><strong>Example:</strong>
+Create a responsive landing page for BrightSpark Marketing using HTML, CSS, and JS. Use a coral and navy color palette. The page should feature a hero section with a persuasive headline, a featured social media campaign, client testimonials, and a "Get a Quote" button. Incorporate high-quality marketing imagery and modern, accessible design.</div>
+    </div>
+        
+    <div class="prompt-box">
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+      <div class="prompt-title">Marketing Contact Page</div>
+      <pre><strong>Prompt:</strong>
+Create a responsive contact page for ___ using HTML, CSS, and JS. Use a ___ color palette. Include a contact form (name, email, message), a map showing the agency location, and links to social media. Style the form with modern, user-friendly design and add a section for business hours or a welcoming message.
+</pre>
+      <div style="margin-top: 0.5rem; font-size: 0.9rem; color: #555;"><strong>Example:</strong>
+Create a responsive contact page for BrightSpark Marketing using HTML, CSS, and JS. Use a coral and navy color palette. Include a contact form (name, email, message), a map showing the agency location, and links to Instagram and LinkedIn. Style the form with modern, user-friendly design and add a section for business hours.</div>
+    </div>
+        
+    <div class="prompt-box">
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+      <div class="prompt-title">Marketing Services Page</div>
+      <pre><strong>Prompt:</strong>
+Create a responsive services page for ___ using HTML, CSS, and JS. Use a ___ color palette. List at least three services (such as SEO, content creation, ad management), each with an icon or image, a short description, and pricing. Use a visually appealing layout, interactive hover effects, and highlight any special offers or packages.
+</pre>
+      <div style="margin-top: 0.5rem; font-size: 0.9rem; color: #555;"><strong>Example:</strong>
+Create a responsive services page for BrightSpark Marketing using HTML, CSS, and JS. Use a coral and navy color palette. List at least three services (SEO, content creation, ad management), each with an icon, a short description, and pricing. Use a card layout with interactive hover effects and highlight a "Starter Marketing" package.</div>
+    </div>
+        </div>
+  <script>
+    function copyPrompt(button) {
+      const text = button.nextElementSibling.nextElementSibling.innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = "Copy", 1500);
+      });
+    }
+  </script>
+
+  <footer style="background:#111;color:#fff;text-align:center;padding:1rem;margin-top:4rem;">
+    <p>© 2025 • Made with ❤️ • Built for creators</p>
+  </footer>
+</body>
+
+</html>
+    
